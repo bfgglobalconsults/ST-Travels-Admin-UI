@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
-  title: "ST Travels Admin",
+  title: "ST Travels and Consulting Admin",
   description: "ST Travels and Consulting Admin Panel",
 };
 
