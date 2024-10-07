@@ -1,20 +1,23 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
+  const token = request.cookies.get("token");
 
-  if (path.split("/")[1] !== "auth" && !request.cookies.has("token")) {
-    console.log("we have no token ")
-    return NextResponse.redirect(new URL("/auth/login", request.url));
+  const isAuthPage =
+    path.startsWith("/login");
+
+  // Redirect unauthenticated users to /login
+  if (path !== "/login" && !token) {
+    return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  console.log(request.cookies.has("token"))
-  if (path.split("/")[1] === "auth" && request.cookies.has("token")) {
-    console.log("we have token ")
+  // Redirect authenticated users away from auth pages (like login)
+  if (path === "/login" && token) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
+
 }
 
 export const config = {
@@ -32,5 +35,5 @@ export const config = {
     "/hotel/:path*",
     "/restaurant/:path*",
     "/cab/:path*",
-  ]
-}
+  ],
+};
