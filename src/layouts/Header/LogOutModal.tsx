@@ -3,17 +3,18 @@ import { Modal } from "reactstrap";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import useLogout from "@/components/auth/useLogout";
 interface LogOutModalInterFace {
   modal: boolean;
   toggle: () => void;
 }
 const LogOutModal = ({ modal, toggle }: LogOutModalInterFace) => {
-  const router = useRouter();
+  const logoutMutation = useLogout();
   const handleLogout = () => {
-    Cookies.remove("token");
-    router.push("/auth/login");
-    toast.error("logout successful");
-  };
+         logoutMutation.mutate();
+       };
+
+
   return (
     <Modal isOpen={modal} toggle={toggle} centered>
       <div className="modal-body">

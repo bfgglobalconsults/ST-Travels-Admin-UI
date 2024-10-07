@@ -1,6 +1,6 @@
 import { MenuItem } from "./SideBarInterFace";
 
-export const MENUITEMS:MenuItem[] = [
+export const MENUITEMS: MenuItem[] = [
   {
     title: "dashboard",
     url: `/dashboard`,
@@ -79,69 +79,91 @@ export const MENUITEMS:MenuItem[] = [
     ],
   },
   {
-    title: "Restaurant",
-    icon: "Coffee",
+    title: "News",
+    icon: "MessageSquare",
     type: "sub",
     menu: [
       {
-        url: "/restaurant/allrestaurant",
-        title: "All Restaurant",
+        url: "/news/allnews",
+        title: "All News",
         type: "link",
       },
       {
-        url: "/restaurant/restaurantdetail",
-        title: "Restaurant's Detail",
+        url: "/news/newsview",
+        title: "New's Detail",
         type: "link",
       },
       {
-        url: "/restaurant/addrestaurant",
-        title: "Add New Restaurant",
-        type: "link",
-      },
-      {
-        url: "/restaurant/menu",
-        title: "Menu Items",
-        type: "link",
-      },
-      {
-        url: "/restaurant/additem",
-        title: "Add Menu Item",
+        url: "/news/addnews",
+        title: "Add News",
         type: "link",
       },
     ],
   },
-  {
-    title: "Cab",
-    icon: "Navigation",
-    type: "sub",
-    menu: [
-      {
-        url: "/cab/allcars",
-        title: "All Cars",
-        type: "link",
-      },
-      {
-        url: "/cab/carsdetail",
-        title: "Cars's Detail",
-        type: "link",
-      },
-      {
-        url: "/cab/addcars",
-        title: "Add New cars",
-        type: "link",
-      },
-      {
-        url: "/cab/drivers",
-        title: "All Drivers",
-        type: "link",
-      },
-      {
-        url: "/cab/adddrivers",
-        title: "Add Drivers",
-        type: "link",
-      },
-    ],
-  },
+  // {
+  //   title: "Restaurant",
+  //   icon: "Coffee",
+  //   type: "sub",
+  //   menu: [
+  //     {
+  //       url: "/restaurant/allrestaurant",
+  //       title: "All Restaurant",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/restaurant/restaurantdetail",
+  //       title: "Restaurant's Detail",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/restaurant/addrestaurant",
+  //       title: "Add New Restaurant",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/restaurant/menu",
+  //       title: "Menu Items",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/restaurant/additem",
+  //       title: "Add Menu Item",
+  //       type: "link",
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: "Cab",
+  //   icon: "Navigation",
+  //   type: "sub",
+  //   menu: [
+  //     {
+  //       url: "/cab/allcars",
+  //       title: "All Cars",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/cab/carsdetail",
+  //       title: "Cars's Detail",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/cab/addcars",
+  //       title: "Add New cars",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/cab/drivers",
+  //       title: "All Drivers",
+  //       type: "link",
+  //     },
+  //     {
+  //       url: "/cab/adddrivers",
+  //       title: "Add Drivers",
+  //       type: "link",
+  //     },
+  //   ],
+  // },
   {
     title: "Booking",
     url: `/booking`,

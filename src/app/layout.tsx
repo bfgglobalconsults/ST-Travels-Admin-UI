@@ -3,6 +3,9 @@ import "../../public/assets/scss/app.scss";
 
 import type { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
+import { Suspense } from "react";
+import ReactQueryProvider from "./(MainLayout)/lib/ReactQueryProvider";
+import "react-toastify/dist/ReactToastify.css"; // Import toastify styles
 
 export const metadata: Metadata = {
   title: "ST Travels and Consulting Admin",
@@ -23,7 +26,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          <ReactQueryProvider>
+            {children}
+          </ReactQueryProvider>
+        </Providers>
         <ToastContainer />
       </body>
     </html>

@@ -6,14 +6,23 @@ import React, { useState } from "react";
 import { Href } from "../../utils/Constant";
 import LogOutModal from "./LogOutModal";
 import Link from "next/link";
+import useLogout from "@/components/auth/useLogout";
 
 const UserProfile = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const toggle = () => setModalOpen(!modalOpen)
+
+  
   return (
     <li className="profile-nav onhover-dropdown pe-0 me-0">
       <div className="media profile-media">
-        <Image height={40} width={40} className="user-profile rounded-circle" src={`${ImagePath}/users/4.jpg`} alt="profile-picture" />
+        <Image
+          height={40}
+          width={40}
+          className="user-profile rounded-circle"
+          src={`${ImagePath}/users/4.jpg`}
+          alt="profile-picture"
+        />
         <div className="user-name-hide media-body">
           <span>Emay Walter</span>
           <p className="mb-0 font-roboto">
@@ -33,7 +42,7 @@ const UserProfile = () => {
         <li>
           <a href={Href} onClick={toggle}>
             <DynamicFeatherIcon iconName="LogOut" />
-            <span>{LogOut}</span>
+            {LogOut}
           </a>
           <LogOutModal modal={modalOpen} toggle={toggle} />
         </li>
